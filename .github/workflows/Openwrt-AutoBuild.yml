@@ -296,6 +296,7 @@ jobs:
         ARGS: "-avzr"
         SOURCE: openwrt/bin/targets
         REMOTE_HOST: op.supes.top
+        REMOTE_PORT: '223'
         REMOTE_USER: root
         TARGET: "/www/wwwroot/op.supes.top/releases/tmp/"
 
