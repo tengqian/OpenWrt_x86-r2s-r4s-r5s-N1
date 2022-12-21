@@ -277,19 +277,9 @@ jobs:
         echo "NOTICE=请分配不少于1G的存储容量" >> $GITHUB_ENV
         fi
 
-    - name: Deploy firmware to server
-      uses: easingthemes/ssh-deploy@main
-      if: env.SSH_PRIVATE_KEY && contains(github.event.action, 'toser')
-      with:
-        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-        ARGS: "-avzr --exclude="
-        SOURCE: firmware/
-        REMOTE_HOST: op.supes.top
-        REMOTE_USER: root
-        TARGET: "/www/wwwroot/op.supes.top/firmware/"
-
     - name: Deploy imagebuilder to server
       uses: easingthemes/ssh-deploy@main
+      continue-on-error: true
       if: env.SSH_PRIVATE_KEY && ! contains(github.event.action, 'noser')
       with:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
