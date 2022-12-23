@@ -13,6 +13,7 @@ rm -rf package/feeds/packages/perl
 mv -f ../feeds/ipq807x/ipq807x target/linux/
 
 rm -rf package/feeds/kiddin9/{firewall,rtl88x2bu,base-files,netifd,nft-fullcone,shortcut-fe,simulated-driver,fast-classifier,fullconenat}
+rm -rf feeds/packages/net/openvswitch
 
 make defconfig
 
