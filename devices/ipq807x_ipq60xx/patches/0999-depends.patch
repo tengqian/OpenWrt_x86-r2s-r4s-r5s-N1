@@ -4,14 +4,14 @@
    SUPPORTED_DEVICES := glinet,ax1800
    DEVICE_DTS_CONFIG := config@cp03-c1
 -  DEVICE_PACKAGES := ath11k-wifi-gl-ax1800 -kmod-usb-dwc3-of-simple kmod-usb-dwc3-qcom kmod-usb3
-+  DEVICE_PACKAGES := ath11k-wifi-gl-ax1800 -kmod-usb-dwc3-of-simple kmod-usb-dwc3-qcom kmod-usb3 wpad-basic-wolfssl kmod-hwmon-pwmfan wireless-regdb kmod-sched-cake ath11k-fwtest ftm
++  DEVICE_PACKAGES := ath11k-wifi-gl-ax1800 -kmod-usb-dwc3-of-simple kmod-usb-dwc3-qcom kmod-usb3 kmod-hwmon-pwmfan wireless-regdb kmod-sched-cake ath11k-fwtest ftm
    IMAGE/sysupgrade.tar := sysupgrade-tar | append-gl-metadata
  endef
 @@ -78,5 +78,5 @@
    SUPPORTED_DEVICES := glinet,axt1800
    DEVICE_DTS_CONFIG := config@cp03-c1
 -  DEVICE_PACKAGES := ath11k-wifi-gl-axt1800 -kmod-usb-dwc3-of-simple kmod-usb-dwc3-qcom kmod-usb3
-+  DEVICE_PACKAGES := ath11k-wifi-gl-axt1800 -kmod-usb-dwc3-of-simple kmod-usb-dwc3-qcom kmod-usb3 wpad-basic-wolfssl kmod-hwmon-pwmfan wireless-regdb kmod-sched-cake ath11k-fwtest ftm
++  DEVICE_PACKAGES := ath11k-wifi-gl-axt1800 -kmod-usb-dwc3-of-simple kmod-usb-dwc3-qcom kmod-usb3 kmod-hwmon-pwmfan wireless-regdb kmod-sched-cake ath11k-fwtest ftm
    IMAGE/sysupgrade.tar := sysupgrade-tar | append-gl-metadata
  endef
 
@@ -19,8 +19,8 @@
 +++ b/target/linux/ipq807x/Makefile
 @@ -16,5 +16,5 @@
  	kmod-qca-nss-drv \
- 	kmod-usb-phy-ipq807x kmod-usb-dwc3-of-simple \
+ 	kmod-usb-phy-ipq807x kmod-usb-dwc3-qcom-internal \
 -	kmod-ath11k-ahb kmod-qrtr_mproc wpad \
-+	kmod-ath11k-ahb kmod-qrtr_mproc \
++	kmod-ath11k-ahb kmod-qrtr_mproc wpad-basic-wolfssl \
  	kmod-gpio-button-hotplug \
  	qca-thermald-10.4 qca-ssdk-shell kmod-qca-nss-drv-bridge-mgr \
