@@ -8,12 +8,9 @@ kernel_v="$(cat include/kernel-version.mk | grep LINUX_KERNEL_HASH-5.4.164* | cu
 echo "KERNEL=${kernel_v}" >> $GITHUB_ENV || true
 sed -i "s?targets/%S/.*'?targets/%S/$kernel_v'?" include/feeds.mk
 
-rm -rf package/feeds/packages/perl
-
 mv -f ../feeds/ipq807x/ipq807x target/linux/
 
-rm -rf package/feeds/kiddin9/{firewall,rtl88x2bu,base-files,netifd,nft-fullcone,shortcut-fe,simulated-driver,fast-classifier,fullconenat}
-rm -rf feeds/packages/net/openvswitch
+rm -rf package/feeds/kiddin9/{firewall,rtl88x2bu,base-files,netifd,nft-fullcone}
 
 make defconfig
 
