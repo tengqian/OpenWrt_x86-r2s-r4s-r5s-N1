@@ -142,7 +142,7 @@ jobs:
         if [ "${{matrix.target}}" == "ipq807x_ipq60xx" ]; then
             git clone https://github.com/gl-inet/gl-infra-builder.git
             cd gl-infra-builder
-            python3 setup.py -c configs/config-wlan-ap.yml
+            python3 setup.py -c configs/config-wlan-ap-5.4.yml
             ln -sf gl-infra-builder/wlan-ap/openwrt ../openwrt
             cd -
         elif [ "${{matrix.target}}" == "mediatek_gl_mt7981" ]; then
