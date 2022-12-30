@@ -8,7 +8,7 @@ kernel_v="$(cat include/kernel-version.mk | grep LINUX_KERNEL_HASH-5.* | cut -f 
 echo "KERNEL=${kernel_v}" >> $GITHUB_ENV || true
 sed -i "s?targets/%S/.*'?targets/%S/$kernel_v'?" include/feeds.mk
 
-rm -rf package/feeds/kiddin9/{firewall,rtl88x2bu,base-files,netifd}
+rm -rf package/feeds/kiddin9/{firewall,rtl*,base-files,netifd}
 
 rm -rf devices/common/patches/{glinet,imagebuilder.patch,iptables.patch,targets.patch,kernel-defaults.patch,disable_flock.patch}
 
