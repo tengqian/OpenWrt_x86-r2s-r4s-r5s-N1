@@ -10,4 +10,6 @@ sed -i "s?targets/%S/.*'?targets/%S/$kernel_v'?" include/feeds.mk
 
 rm -rf devices/common/patches/{glinet,imagebuilder.patch,iptables.patch,kernel-defaults.patch,targets.patch}
 
+rm -rf toolchain/glibc
 
+svn co https://github.com/openwrt/openwrt/branches/openwrt-22.03/toolchain/glibc toolchain/glibc
